@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Lesson5.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    WebGrid webGrid = new WebGrid(Model);
+}
+
+
+<h2>Index</h2>
+@webGrid.GetHtml(
+    columns: webGrid.Columns(
+   webGrid.Column(columnName: "Name", header: "Product Name"),
+   webGrid.Column(header: "Price", format: @<p> @item.Price </p>),
+   webGrid.Column(header: "Description", format: @<p> @item.Description </p>)
+    )
+)

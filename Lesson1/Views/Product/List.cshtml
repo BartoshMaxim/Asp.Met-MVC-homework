@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Lesson1.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css"/>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            @foreach (var product in Model)
+            {
+            <tr>
+                <td>
+                    @product.Id
+                </td>
+                <td>
+                    @product.Name
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    @product.Description
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

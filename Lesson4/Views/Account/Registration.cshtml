@@ -1,0 +1,30 @@
+﻿@model Lesson4.Models.RegistrationModel
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+
+@using (Html.BeginForm("Registration", "Account"))
+{
+    if (ViewBag.Error != null)
+    {
+        @Html.ErrorHelper(ViewBag.Error as string)
+    }
+
+    @Html.Label("Email")
+    @Html.TextBoxFor(m => m.Email)
+    <br />
+    @Html.Label("Login")
+    @Html.TextBoxFor(m => m.Login)
+    <br />
+    @Html.Label("Password")
+    @Html.PasswordFor(m => m.Password)
+    <br />
+    @Html.Label("Repeat password")
+    @Html.PasswordFor(m => m.Repassword)
+
+    <br />
+
+    <input type="submit" name="operation" value="Registration" />
+}

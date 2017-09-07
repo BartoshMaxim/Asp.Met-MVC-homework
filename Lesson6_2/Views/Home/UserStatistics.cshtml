@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Lesson6_2.Models.Order>
+
+@{
+    ViewBag.Title = "UserStatistics";
+}
+
+<h2>UserStatistics</h2>
+
+@if (Model != null)
+{
+    foreach(var order in Model)
+    {
+        @:<p> @order.OrderId</p>
+    }
+
+    if (ViewBag.Cost != null)
+    {
+        @:<p>Cost: @ViewBag.Cost</p>
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.TextBox("id", null, new { type = "number" })
+
+    @:<input type="submit" value="submit" /> 
+}

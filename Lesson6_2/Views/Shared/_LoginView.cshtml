@@ -1,0 +1,23 @@
+﻿@if (Request.IsAuthenticated)
+{
+    @Html.ActionLink("Orders", "Index", "Orders", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("Products", "Index", "Products", new { area = "" }, new { @class = "navbar-brand" })
+    if (Roles.IsUserInRole(User.Identity.Name, "Admin"))
+    {
+        @Html.ActionLink("Users", "Index", "Users", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("Reports", "Reports", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("User Statistics", "UserStatistics", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    }
+    <span class = "navbar-brand">Hello @User.Identity.Name</span>
+    using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { @class = "d-inline-block", id = "logoutForm"}))
+    {
+        @Html.AntiForgeryToken()
+        <a href="javascript:document.getElementById('logoutForm').submit()" class = "navbar-brand">Log out</a>
+    }
+
+}
+else
+{
+    @Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.ActionLink("Registration", "Registration", "Account", new { area = "" }, new { @class = "navbar-brand" })
+}

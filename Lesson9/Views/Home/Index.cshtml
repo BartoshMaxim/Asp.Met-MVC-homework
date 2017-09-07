@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+            </tr>
+        </thead>
+        <tbody id="tabledata">
+            @Html.Action("ProductView", new { page = 1 })
+        </tbody>
+    </table>
+@foreach (int page in new[] { 1, 2, 3 })
+{
+    @Ajax.ActionLink(page.ToString(), "ProductView", new { page = page }, new AjaxOptions { UpdateTargetId = "tabledata" })
+    @:&nbsp;
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

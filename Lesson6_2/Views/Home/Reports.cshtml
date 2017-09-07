@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Lesson6_2.Models.Order>
+@{
+    ViewBag.Title = "Reports";
+}
+
+<h2>Reports</h2>
+
+@if (Model != null)
+{
+    foreach(var order in Model)
+    {
+        <p>@order.OrderId</p>
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.TextBox("start",null,new { type = "date", value = ""})
+    @Html.TextBox("end", null, new { type = "date" })
+    <input type="submit" name="submit" value="Find"/>
+}
+<script>
+    document.getElementById('start').valueAsDate = new Date();
+    document.getElementById('end').valueAsDate = new Date();
+</script>

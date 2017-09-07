@@ -1,0 +1,22 @@
+﻿@model Lesson4.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (@Html.BeginForm("CheckUser", "Account"))
+{
+    if (ViewBag.Error != null)
+    {
+        @Html.ErrorHelper(ViewBag.Error as string)
+    }
+
+    @Html.Label("Login")
+    @Html.TextBoxFor(m => m.Login)
+    <br />
+    @Html.Label("Password")
+    @Html.PasswordFor(m => m.Password)
+    <br />
+    <input type="submit" name="operation" value="Log in" />
+}

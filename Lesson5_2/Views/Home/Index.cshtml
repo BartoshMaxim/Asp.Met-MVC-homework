@@ -1,0 +1,27 @@
+﻿@model Lesson5_2.Models.CaclModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (ViewBag.Error != null)
+{
+    @Html.ErrorHelper(ViewBag.Error as string)
+}
+
+@if (ViewBag.Result != null)
+{
+    @Html.ResultHelper((int)ViewBag.Result)
+}
+
+@using (Html.BeginForm())
+{
+    @Html.TextBoxFor(x => x.X)
+    @Html.TextBoxFor(y => y.Y)
+
+    <input name="submit" type="submit" value="+" />
+    <input name="submit" type="submit" value="-" />
+    <input name="submit" type="submit" value="*" />
+    <input name="submit" type="submit" value="/" />
+}

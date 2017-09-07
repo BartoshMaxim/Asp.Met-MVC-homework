@@ -1,0 +1,5 @@
+﻿@model Lesson6.Models.PhoneNumber
+
+@Html.TextBoxFor(x=>x.CountryNumber,new { type = "number", min = "000", max = "999" })
+@Html.TextBoxFor(x => x.CityNumber, new { type = "number", min = "000", max = "999" })
+@Html.TextBoxFor(x => x.UserNumber, new { type = "number", min = "000", max = "999" })

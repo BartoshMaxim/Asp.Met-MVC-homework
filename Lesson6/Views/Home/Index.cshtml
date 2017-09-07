@@ -1,0 +1,14 @@
+﻿@model Lesson6.Models.User 
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.EditorFor(x=>x.Name)
+
+@Html.EditorFor(x => x.Phone, "PhoneNumber")
+
+@Html.DisplayFor(x=>x.Name)
+
+@Html.DisplayFor(x => x.Phone, "PhoneNumber")

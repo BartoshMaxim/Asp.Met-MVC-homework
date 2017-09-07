@@ -1,0 +1,15 @@
+﻿@model string
+
+<select name="roleUser">
+    @foreach (var role in Roles.GetAllRoles())
+    {
+        if (Roles.GetRolesForUser(Model)[0] == role)
+        {
+            <option selected value="@role">@role</option>
+        }
+        else
+        {
+            <option value="@role">@role</option>
+        }
+    }
+</select>

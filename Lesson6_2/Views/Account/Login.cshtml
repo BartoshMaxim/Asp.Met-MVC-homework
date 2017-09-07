@@ -1,0 +1,16 @@
+﻿@model Lesson6_2.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel()
+    @:<input type="submit" value="Log in"/>
+}
+
+<p>@Html.ActionLink("Registration", "Registration","Account")</p>

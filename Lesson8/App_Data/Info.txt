@@ -1,0 +1,3 @@
+﻿Method: Index; Time: 00:00:00.0096323
+Method: About; Time: 00:00:00.0035929
+Method: Contact; Time: 00:00:00.0021831

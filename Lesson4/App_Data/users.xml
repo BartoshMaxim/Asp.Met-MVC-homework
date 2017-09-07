@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<UserList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Users>
+    <User>
+      <Login>bartosh.maxim</Login>
+      <Email>bartosh.maxim@yandex.ua</Email>
+      <Password>qazwsx</Password>
+    </User>
+    <User>
+      <Login>admin</Login>
+      <Email>bartosh.maxim@gmail.com</Email>
+      <Password>admin</Password>
+    </User>
+  </Users>
+</UserList>

@@ -1,0 +1,15 @@
+﻿@model string
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (Model==null)
+{
+    <p>No data</p>
+}
+else
+{
+<p>@Model</p>
+}
